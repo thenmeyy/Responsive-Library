@@ -1,0 +1,27 @@
+.grid {
+    width: 100%;
+    display: block;
+    padding: 0;
+}
+
+/* Khi sử dụng wide, nếu dạng PC thì sẽ có margin 2 bên, nhưng về tablet và mobile thì mất */
+.grid.wide {
+    max-width: 1200px;
+    /* Căn giữa layour wide */
+    margin: 0 auto;
+}
+
+/* Đặt lại chiều rộng trên các thiết bị */
+/* Tablet - PC độ phân giải thấp */
+@media (min-width: 740px) and (max-width: 1023px) {
+    .wide {
+        width: 644px;
+    }
+}
+
+/* PC độ phân giải thấp */
+@media (min-width: 1024px) and (max-width: 1239px) {
+    .wide {
+        width: 984px;
+    }
+}
