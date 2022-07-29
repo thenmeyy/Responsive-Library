@@ -95,6 +95,9 @@
     max-width: 100%;
 }
 
+/* c-offset: vị trí */
+/* Offset sử dụng khi muốn chỉnh vị trí của course mà không làm 
+ảnh hưởng đến library thường */
 .c-o-1 {
     margin-left: 8.33333%;
 }
@@ -230,6 +233,7 @@
         max-width: 100%;
     }
 
+    /* m-offset */
     .m-o-1 {
         margin-left: 8.33333%;
     }
@@ -382,6 +386,7 @@
         max-width: 100%;
     }
 
+    /* l-offset */
     .l-o-1 {
         margin-left: 8.33333%;
     }
