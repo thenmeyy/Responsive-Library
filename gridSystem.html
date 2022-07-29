@@ -1,33 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Responsive library</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Responsive Library</title>
     <link rel="stylesheet" href="./grid.css">
     <style>
-        h1 {
-            padding: 100px 0;
-            font-size: 100px;
-            color: #fff;
-            margin: 0;
-        }
+      * {
+        box-sizing: border-box;
+      }
+      .col {
+        text-align: center;
+        background-color: #ccc;
+        background-clip: content-box;
+        margin-top: 8px;
+        margin-bottom: 8px;
+      }
 
-        .container {
-            background-color: orange;
-            text-align: center;
-        }
+      .course-item {
+        background-color: orange;
+        height: 260px;
+      }
 
-        body {
-            margin: 0;
+      .h1 {
+        color: #fff;
+        line-height: 260px;
+      }
+
+      .category {
+        background-color: green;
+        height: 260px;
+      }
+
+      ul {
+        margin-top: 0;
+      }
+
+      /* Có trường hợp khi cho course xuống dòng, nhưng course trên 
+      course dưới bị dính vào nhau */
+      @media (max-width: 1023px) {
+        .course-item {
+            margin-top: 16px;
         }
+      }
     </style>
-</head>
-<body>
-    
-    <div class="grid container wide">
-        <h1>GRID SYSTEM</h1>
+  </head>
+
+  <!-- 
+    Column: .col 
+    Prefix class: Class tiền tố
+        -c- (column) mobile 
+        -m- (medium) tablet
+        -l- (large) PC
+    Số đi sau: lấy 12 chia cho số course
+   -->
+  <body>
+    <div class="grid wide">
+      <div class="row">
+        <div class="col l-3 m-0 c-0">
+            <div class="category">
+                <ul>
+                    <li>Javascript</li>
+                    <li>Java</li>
+                    <li>CSS</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col l-9 m-12 c -12">
+            <div class="row">
+                <!-- Trên PC có 4 khóa học trên 1 hàng: 12/4 -> l-3
+                Trên tablet có 2 khóa học trên 1 hàng: 12/3 -> m-4 -->
+                <div class="col l-4 m-6 c-12">
+                    <div class="course-item">
+                        <h1>Course 1</h1>
+                    </div>
+                </div>
+
+                <div class="col l-4 m-6 c-12">
+                    <div class="course-item">
+                        <h1>Course 2</h1>
+                    </div>
+                </div>
+
+                <div class="col l-4 m-6 c-12">
+                    <div class="course-item">
+                        <h1>Course 3</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
     </div>
-</body>
+  </body>
 </html>
